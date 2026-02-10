@@ -1,0 +1,37 @@
+.citizen-status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.35em;
+  vertical-align: middle;
+  line-height: 0;
+}
+
+.citizen-status-icon {
+  width: 1em;
+  height: 1em;
+  object-fit: contain;
+  display: block;
+}
+
+/* Compact size for Past Elections and similar contexts */
+.citizen-status-badge.size-small {
+  margin-left: 0.25em;
+}
+
+.citizen-status-badge.size-small .citizen-status-icon {
+  width: 0.8em;
+  height: 0.8em;
+}
+
+.citizen-status-badge.citizen-official .citizen-status-icon {
+  /* checked.png - no extra styling */
+}
+
+.citizen-status-badge.citizen-reserve .citizen-status-icon {
+  /* pending.png */
+}
+
+.citizen-status-badge.citizen-expelled .citizen-status-icon {
+  /* ban.png */
+}

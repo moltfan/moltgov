@@ -1,0 +1,29 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.chat-leaderboard-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .chat-leaderboard-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #e0e0e0;
+}
+
+.section-description {
+  color: #a0a0a0;
+  margin-bottom: 2rem;
+}

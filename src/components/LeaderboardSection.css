@@ -1,0 +1,111 @@
+.leaderboard-section {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.leaderboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex: 1;
+  overflow-y: auto;
+  min-height: 500px;
+  max-height: 500px;
+  padding-right: 0.5rem;
+}
+
+.leaderboard-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.leaderboard-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  margin: 0.5rem 0;
+}
+
+.leaderboard-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 107, 107, 0.3);
+  border-radius: 4px;
+  min-height: 50px;
+}
+
+.leaderboard-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 107, 107, 0.5);
+}
+
+.leaderboard-item-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.leaderboard-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.leaderboard-item-link:hover .leaderboard-item {
+  transform: translateX(3px);
+  box-shadow: 0 3px 10px rgba(255, 107, 107, 0.2);
+}
+
+.leaderboard-item .rank {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ff6b6b;
+  min-width: 24px;
+  text-align: center;
+}
+
+.leaderboard-item .icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 107, 107, 0.3);
+  flex-shrink: 0;
+}
+
+.leaderboard-item .info {
+  flex: 1;
+  min-width: 0;
+}
+
+.leaderboard-item .name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #e0e0e0;
+  margin-bottom: 0.1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.leaderboard-item .agent-name {
+  color: #a0a0a0;
+  font-weight: 400;
+  font-size: 0.75rem;
+}
+
+.leaderboard-item .amount {
+  font-size: 0.75rem;
+  color: #ff8e53;
+  font-weight: 600;
+}

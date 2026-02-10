@@ -1,0 +1,515 @@
+.litigation-page {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+.litigation-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.5rem 0;
+}
+
+.litigation-intro {
+  color: #a0a0a0;
+  font-size: 1rem;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.5;
+}
+
+.litigation-loading,
+.litigation-error {
+  padding: 2rem;
+  text-align: center;
+  color: #c0c0c0;
+}
+
+.litigation-spinner {
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-top-color: #ff8e53;
+  border-radius: 50%;
+  animation: litigation-spin 0.8s linear infinite;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+@keyframes litigation-spin {
+  to { transform: rotate(360deg); }
+}
+
+.litigation-error-msg {
+  color: #e57373;
+}
+
+.litigation-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.litigation-stat {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  text-align: center;
+}
+
+.litigation-stat.submitted {
+  border-color: rgba(255, 193, 7, 0.35);
+  background: rgba(255, 193, 7, 0.08);
+}
+
+.litigation-stat.under_review {
+  border-color: rgba(33, 150, 243, 0.35);
+  background: rgba(33, 150, 243, 0.08);
+}
+
+.litigation-stat.verdict_guilty {
+  border-color: rgba(244, 67, 54, 0.35);
+  background: rgba(244, 67, 54, 0.08);
+}
+
+.litigation-stat.verdict_innocent {
+  border-color: rgba(76, 175, 80, 0.35);
+  background: rgba(76, 175, 80, 0.08);
+}
+
+.litigation-stat-value {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #e0e0e0;
+  margin-bottom: 0.25rem;
+}
+
+.litigation-stat.submitted .litigation-stat-value { color: #ffc107; }
+.litigation-stat.under_review .litigation-stat-value { color: #2196f3; }
+.litigation-stat.verdict_guilty .litigation-stat-value { color: #e57373; }
+.litigation-stat.verdict_innocent .litigation-stat-value { color: #81c784; }
+
+.litigation-stat-label {
+  font-size: 0.85rem;
+  color: #a0a0a0;
+}
+
+.litigation-section {
+  margin-bottom: 2.5rem;
+}
+
+.litigation-section-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #e0e0e0;
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.litigation-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.litigation-filters label {
+  color: #c0c0c0;
+  font-size: 0.9rem;
+}
+
+.litigation-filters select {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #e0e0e0;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+}
+
+.litigation-empty {
+  color: #888;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.litigation-complaint-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.litigation-complaint-item {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.litigation-complaint-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+}
+
+.litigation-complaint-title {
+  color: #ff8e53;
+  font-weight: 600;
+  flex: 1;
+  min-width: 0;
+}
+
+.litigation-complaint-title:hover {
+  text-decoration: underline;
+}
+
+.litigation-complaint-status {
+  font-size: 0.8rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+}
+
+.litigation-complaint-status.status-submitted { background: rgba(255, 193, 7, 0.2); color: #ffc107; }
+.litigation-complaint-status.status-under_review { background: rgba(33, 150, 243, 0.2); color: #2196f3; }
+.litigation-complaint-status.status-verdict_guilty { background: rgba(244, 67, 54, 0.2); color: #e57373; }
+.litigation-complaint-status.status-verdict_innocent { background: rgba(76, 175, 80, 0.2); color: #81c784; }
+.litigation-complaint-status.status-dismissed { background: rgba(160, 160, 160, 0.2); color: #aaa; }
+
+.litigation-complaint-meta {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 0.35rem;
+  padding-left: 0;
+}
+
+.litigation-my-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.litigation-badge {
+  font-size: 0.9rem;
+  color: #81c784;
+  padding: 0.25rem 0.5rem;
+  background: rgba(76, 175, 80, 0.15);
+  border-radius: 6px;
+}
+
+.litigation-hint {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.litigation-pending-list {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.litigation-pending-list h3 {
+  font-size: 1rem;
+  color: #e0e0e0;
+  margin: 0 0 0.75rem 0;
+}
+
+.litigation-pending-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.litigation-pending-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.litigation-pending-item:last-child {
+  border-bottom: none;
+}
+
+.litigation-pending-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.litigation-role-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.litigation-role-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.litigation-role-item-police {
+  border-color: rgba(33, 150, 243, 0.25);
+  background: rgba(33, 150, 243, 0.06);
+}
+
+.litigation-role-item-judge {
+  border-color: rgba(156, 39, 176, 0.25);
+  background: rgba(156, 39, 176, 0.06);
+}
+
+.litigation-role-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.litigation-role-icon-police {
+  background: rgba(33, 150, 243, 0.3);
+  color: #fff;
+  font-family: inherit;
+}
+
+.litigation-role-icon-judge {
+  background: rgba(156, 39, 176, 0.3);
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.litigation-role-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: inherit;
+  text-decoration: none;
+  min-width: 0;
+}
+
+.litigation-role-link:hover .litigation-role-display-name,
+.litigation-role-link:hover .litigation-role-agent-name {
+  color: #ff8e53;
+}
+
+.litigation-role-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.litigation-role-item-police .litigation-role-avatar {
+  border-color: rgba(33, 150, 243, 0.4);
+}
+
+.litigation-role-item-judge .litigation-role-avatar {
+  border-color: rgba(156, 39, 176, 0.4);
+}
+
+.litigation-role-names {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.litigation-role-display-name {
+  font-weight: 600;
+  color: #e0e0e0;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.litigation-role-agent-name {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.litigation-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  font-size: 0.9rem;
+}
+
+.litigation-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.litigation-btn-primary {
+  background: rgba(255, 142, 83, 0.25);
+  color: #ff8e53;
+  border-color: rgba(255, 142, 83, 0.5);
+}
+
+.litigation-btn-outline {
+  background: transparent;
+  color: #c0c0c0;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.litigation-btn-approve {
+  background: rgba(76, 175, 80, 0.2);
+  color: #81c784;
+  border-color: rgba(76, 175, 80, 0.4);
+}
+
+.litigation-btn-reject {
+  background: rgba(244, 67, 54, 0.2);
+  color: #e57373;
+  border-color: rgba(244, 67, 54, 0.4);
+}
+
+.litigation-btn:hover:not(:disabled) {
+  filter: brightness(1.1);
+}
+
+/* Overlay & modal */
+.litigation-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 1rem;
+}
+
+.litigation-modal {
+  background: #1e1e2a;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  max-width: 480px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 1.5rem;
+}
+
+.litigation-modal-wide {
+  max-width: 560px;
+}
+
+.litigation-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.litigation-modal-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.litigation-modal-close {
+  background: none;
+  border: none;
+  color: #a0a0a0;
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.litigation-modal-close:hover {
+  color: #fff;
+}
+
+.litigation-form-label {
+  display: block;
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+  color: #c0c0c0;
+  font-size: 0.9rem;
+}
+
+.litigation-form-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #e0e0e0;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.litigation-form-input:focus {
+  outline: none;
+  border-color: #ff8e53;
+}
+
+.litigation-modal-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.litigation-detail-status,
+.litigation-detail-block,
+.litigation-detail-date {
+  margin: 0.5rem 0;
+  color: #b0b0b0;
+  font-size: 0.95rem;
+}
+
+.litigation-detail-block p {
+  margin: 0.25rem 0 0 0;
+}
+
+.litigation-modal p {
+  margin: 0.35rem 0;
+  color: #c0c0c0;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 640px) {
+  .litigation-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

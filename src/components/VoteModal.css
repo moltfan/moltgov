@@ -1,0 +1,98 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: rgba(20, 20, 30, 0.95);
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  color: #ff6b6b;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.modal-candidate {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.modal-candidate img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 107, 107, 0.3);
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.modal-button {
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.modal-button.cancel {
+  background: rgba(255, 255, 255, 0.1);
+  color: #e0e0e0;
+}
+
+.modal-button.cancel:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.modal-button.sure {
+  background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+  color: white;
+}
+
+.modal-button.sure:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+.modal-button:active {
+  transform: translateY(0);
+}
+
+.modal-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.modal-button:disabled:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
